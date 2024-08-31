@@ -9,17 +9,34 @@
   "scripts": {
     "test": "node --test test/**/*.test.js",
     "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "dev": "fastify start -w -l info -P app.js",
+    "lint": "eslint --color --cache",
+    "lint:fix": "eslint --fix",
+    "checkformat": "prettier --check .",
+    "fixformat": "prettier --write .",
+    "devsec": "snyk test"
+  },
+  "engines": {
+    "node": "^20",
+    "npm": "^9"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.26.1",
-    "fastify-plugin": "^4.0.0",
     "@fastify/autoload": "^5.0.0",
     "@fastify/sensible": "^5.0.0",
-    "fastify-cli": "^6.3.0"
+    "fastify": "^4.26.1",
+    "fastify-cli": "^6.3.0",
+    "fastify-plugin": "^4.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "eslint": "^9.9.1",
+    "eslint-config-semistandard": "^17.0.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "semistandard": "^17.0.0",
+    "snyk": "^1.1293.0"
+  }
 }
