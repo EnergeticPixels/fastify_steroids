@@ -10,6 +10,9 @@ importers:
       "@fastify/autoload":
         specifier: ^5.0.0
         version: 5.10.0
+      "@fastify/env":
+        specifier: ^4.4.0
+        version: 4.4.0
       "@fastify/sensible":
         specifier: ^5.0.0
         version: 5.6.0
@@ -120,6 +123,12 @@ packages:
     resolution:
       {
         integrity: sha512-fsaybTGDyQ5KpPsplQqb9yKdCf2x/pbNpMNk8Tvp3rRz7lVcupKysH4b2ELMN2P4Hak1+UqTYdTj/u4FNV2p0g==,
+      }
+
+  "@fastify/env@4.4.0":
+    resolution:
+      {
+        integrity: sha512-JEg6wo05KOhmRJ1lBTjJ8zQVUJmxInaavsMkfO1cfYWXOfdQXO48k01LneOmM5Y8dwwQ6ff7WUEi/dHl8YidIQ==,
       }
 
   "@fastify/error@3.4.1":
@@ -655,6 +664,13 @@ packages:
       }
     engines: { node: ">=6.0.0" }
 
+  dotenv-expand@10.0.0:
+    resolution:
+      {
+        integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==,
+      }
+    engines: { node: ">=12" }
+
   dotenv@16.4.5:
     resolution:
       {
@@ -666,6 +682,12 @@ packages:
     resolution:
       {
         integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==,
+      }
+
+  env-schema@6.0.0:
+    resolution:
+      {
+        integrity: sha512-/IHp1EmrfubUOfF1wfe8koDWM5/dxUDylHANPNrPyrsYWJ7KRiB8gXbjtqQBujmOhpSpXXOhhnaL+meb+MaGtA==,
       }
 
   error-ex@1.3.2:
@@ -2813,6 +2835,11 @@ snapshots:
 
   "@fastify/deepmerge@2.0.0": {}
 
+  "@fastify/env@4.4.0":
+    dependencies:
+      env-schema: 6.0.0
+      fastify-plugin: 4.5.1
+
   "@fastify/error@3.4.1": {}
 
   "@fastify/fast-json-stringify-compiler@4.3.0":
@@ -3153,11 +3180,19 @@ snapshots:
     dependencies:
       esutils: 2.0.3
 
+  dotenv-expand@10.0.0: {}
+
   dotenv@16.4.5: {}
 
   end-of-stream@1.4.4:
     dependencies:
       once: 1.4.0
+
+  env-schema@6.0.0:
+    dependencies:
+      ajv: 8.17.1
+      dotenv: 16.4.5
+      dotenv-expand: 10.0.0
 
   error-ex@1.3.2:
     dependencies:

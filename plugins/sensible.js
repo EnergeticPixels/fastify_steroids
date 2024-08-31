@@ -8,7 +8,7 @@ import sensible from "@fastify/sensible";
  */
 export default fp(async function (fastify, opts) {
   console.info("Registering sensible plugin");
-  fastify.register(sensible, {
+  await fastify.register(sensible, {
     errorHandler: false,
   });
 });

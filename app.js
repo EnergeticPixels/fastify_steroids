@@ -1,12 +1,15 @@
 "use strict";
 
-const path = require("node:path");
-const AutoLoad = require("@fastify/autoload");
+import path from "node:path";
+import { fileURLToPath } from "url";
+import AutoLoad from "@fastify/autoload";
 
-// Pass --options via CLI arguments in command to enable these options.
-const options = {};
+import serverOptions from "./configs/server-options.js";
 
-module.exports = async function (fastify, opts) {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default async function (fastify, opts) {
   // Place here your custom code!
 
   // Do not touch the following lines
@@ -18,7 +21,17 @@ module.exports = async function (fastify, opts) {
     dir: path.join(__dirname, "plugins"),
     ignorePattern: /.*.no-aload\.js/,
     indexPattern: /^no$/i,
-    options: Object.assign({}, opts),
+    // options: {Object.assign({}, opts)},
+    options: { ...opts },
+  });
+
+  // This loads all of the schemas defined in schemas
+  // define your schemas in one of these
+  fastify.register(AutoLoad, {
+    dir: path.join(__dirname, "schemas"),
+    indexPattern: /^loader.js$/i,
+    // options: {Object.assign({}, opts)},
+    options: { ...opts },
   });
 
   // This loads all plugins defined in routes
@@ -26,8 +39,14 @@ module.exports = async function (fastify, opts) {
   // THIS MUST BE THE LAST AUTOLOAD DESIGNATED! VERY IMPORTANT
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, "routes"),
-    options: Object.assign({}, opts),
+    indexPattern: /.*routes(\.js|.cjs)$/i,
+    ignorePattern: /.*\.js/,
+    autoHooksPattern: /.*hooks(\.js|\.cjs)$/i,
+    autoHooks: true,
+    cascadeHooks: true,
+    // options: {Object.assign({}, opts)},
+    options: { ...opts },
   });
-};
+}
 
-module.exports.options = options;
+export const options = serverOptions;
