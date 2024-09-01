@@ -1,5 +1,3 @@
-"use strict";
-
 import fp from "fastify-plugin";
 import fastifyEnv from "@fastify/env";
 
@@ -18,13 +16,16 @@ const schema = {
 };
 
 export default fp(
-  async function configLoader(fastify, opts, next) {
+  async function configLoader(fastify, opts) {
     await fastify.register(fastifyEnv, {
       confKey: "secrets",
-      // schema: fastify.getSchema('schema:dotenv')
-      schema: schema,
+      schema: fastify.getSchema('schema:dotenv')
+      // schema: schema,
     });
-    next();
-  },
-  { name: "application-config" },
-);
+    fastify.decorate('config', {
+      mongo: {
+        forceClose: true,
+        url: fastify.secrets.DB_HOST,
+      }
+    })
+  });

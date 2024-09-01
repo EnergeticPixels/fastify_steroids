@@ -19,10 +19,11 @@ export default async function (fastify, opts) {
   // through your application
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, "plugins"),
+    dirNameRoutePrefix: false,
     ignorePattern: /.*.no-aload\.js/,
     indexPattern: /^no$/i,
     // options: {Object.assign({}, opts)},
-    options: { ...opts },
+    options: fastify.config,
   });
 
   // This loads all of the schemas defined in schemas
@@ -33,6 +34,9 @@ export default async function (fastify, opts) {
     // options: {Object.assign({}, opts)},
     options: { ...opts },
   });
+
+  await fastify.register(import('./configs/config.js'));
+  fastify.log.info('Config loaded %o', fastify.config);
 
   // This loads all plugins defined in routes
   // define your routes in one of these

@@ -13,6 +13,9 @@ importers:
       "@fastify/env":
         specifier: ^4.4.0
         version: 4.4.0
+      "@fastify/mongodb":
+        specifier: ^8.0.0
+        version: 8.0.0
       "@fastify/sensible":
         specifier: ^5.0.0
         version: 5.6.0
@@ -149,6 +152,12 @@ packages:
         integrity: sha512-fERDVz7topgNjtXsJTTW1JKLy0rhuLRcquYqNR9rF7OcVpCa2OVW49ZPDIhaRRCaUuvVxI+N416xUoF76HNSXA==,
       }
 
+  "@fastify/mongodb@8.0.0":
+    resolution:
+      {
+        integrity: sha512-IDw/wWpdc53+Y5sPpMg+ek71HOIVuz8NoD2GlfIOcvGE/lYdrZvnFQxqJcaZtlwPZ7YflDDkIu5aNkCPWdZQ0Q==,
+      }
+
   "@fastify/sensible@5.6.0":
     resolution:
       {
@@ -190,6 +199,12 @@ packages:
         integrity: sha512-9I2Zn6+NJLfaGoz9jN3lpwDgAYvfGeNYdbAIjJOqzs4Tpc+VU3Jqq4IofSUBKajiDS8k9fZIg18/z13mpk1bsA==,
       }
     engines: { node: ">=8" }
+
+  "@mongodb-js/saslprep@1.1.8":
+    resolution:
+      {
+        integrity: sha512-qKwC/M/nNNaKUBMQ0nuzm47b7ZYWQHN3pcXq4IIcoSBc2hOIrflAxJduIvvqmhoz3gR2TacTAs8vlsCVPkiEdQ==,
+      }
 
   "@nodelib/fs.scandir@2.1.5":
     resolution:
@@ -258,6 +273,18 @@ packages:
     resolution:
       {
         integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==,
+      }
+
+  "@types/webidl-conversions@7.0.3":
+    resolution:
+      {
+        integrity: sha512-CiJJvcRtIgzadHCYXw7dqEnMNRjhGZlYK05Mj9OyktqV8uVT8fD2BFOB7S1uwBE3Kj2Z+4UyPmFw/Ixgw/LAlA==,
+      }
+
+  "@types/whatwg-url@11.0.5":
+    resolution:
+      {
+        integrity: sha512-coYR071JRaHa+xoEvvYqvnIHaVqaYrLPbsufM9BF63HkwI5Lgmy2QR8Q5K/lYDYo5AK82wOvSOS0UsLTpTG7uQ==,
       }
 
   "@ungap/structured-clone@1.2.0":
@@ -475,6 +502,13 @@ packages:
         integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==,
       }
     engines: { node: ">=8" }
+
+  bson@6.8.0:
+    resolution:
+      {
+        integrity: sha512-iOJg8pr7wq2tg/zSlCCHMi3hMm5JTOxLTagf3zxhcenHsFp+c6uOs6K7W5UE7A4QIJGtqh/ZovFNMP4mOPJynQ==,
+      }
+    engines: { node: ">=16.20.1" }
 
   buffer@6.0.3:
     resolution:
@@ -1838,6 +1872,12 @@ packages:
       }
     engines: { node: ">= 0.6" }
 
+  memory-pager@1.5.0:
+    resolution:
+      {
+        integrity: sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg==,
+      }
+
   mime-db@1.52.0:
     resolution:
       {
@@ -1870,6 +1910,42 @@ packages:
       {
         integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==,
       }
+
+  mongodb-connection-string-url@3.0.1:
+    resolution:
+      {
+        integrity: sha512-XqMGwRX0Lgn05TDB4PyG2h2kKO/FfWJyCzYQbIhXUxz7ETt0I/FqHjUeqj37irJ+Dl1ZtU82uYyj14u2XsZKfg==,
+      }
+
+  mongodb@6.8.0:
+    resolution:
+      {
+        integrity: sha512-HGQ9NWDle5WvwMnrvUxsFYPd3JEbqD3RgABHBQRuoCEND0qzhsd0iH5ypHsf1eJ+sXmvmyKpP+FLOKY8Il7jMw==,
+      }
+    engines: { node: ">=16.20.1" }
+    peerDependencies:
+      "@aws-sdk/credential-providers": ^3.188.0
+      "@mongodb-js/zstd": ^1.1.0
+      gcp-metadata: ^5.2.0
+      kerberos: ^2.0.1
+      mongodb-client-encryption: ">=6.0.0 <7"
+      snappy: ^7.2.2
+      socks: ^2.7.1
+    peerDependenciesMeta:
+      "@aws-sdk/credential-providers":
+        optional: true
+      "@mongodb-js/zstd":
+        optional: true
+      gcp-metadata:
+        optional: true
+      kerberos:
+        optional: true
+      mongodb-client-encryption:
+        optional: true
+      snappy:
+        optional: true
+      socks:
+        optional: true
 
   ms@2.1.2:
     resolution:
@@ -2455,6 +2531,12 @@ packages:
         integrity: sha512-hTSD/6JMLyT4r9zeof6UtuBDpjJ9sO08/nmS5djaA9eozT9oOlNdpXSnzcgj4FTqpk3nkLrs61l4gip9r1HCrQ==,
       }
 
+  sparse-bitfield@3.0.3:
+    resolution:
+      {
+        integrity: sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ==,
+      }
+
   split2@3.2.2:
     resolution:
       {
@@ -2601,6 +2683,13 @@ packages:
       }
     engines: { node: ">=0.6" }
 
+  tr46@4.1.1:
+    resolution:
+      {
+        integrity: sha512-2lv/66T7e5yNyhAAC4NaKe5nVavzuGJQVVtRYLyQ2OI8tsJ61PMLlelehb0wi2Hx6+hT/OJUWZcw8MjlSRnxvw==,
+      }
+    engines: { node: ">=14" }
+
   tsconfig-paths@3.15.0:
     resolution:
       {
@@ -2700,6 +2789,20 @@ packages:
       {
         integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==,
       }
+
+  webidl-conversions@7.0.0:
+    resolution:
+      {
+        integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==,
+      }
+    engines: { node: ">=12" }
+
+  whatwg-url@13.0.0:
+    resolution:
+      {
+        integrity: sha512-9WWbymnqj57+XEuqADHrCJ2eSXzn8WXIW/YSGaZtb2WKAInQ6CHfaUUcTyyver0p8BDg5StLQq8h1vtZuwmOig==,
+      }
+    engines: { node: ">=16" }
 
   which-boxed-primitive@1.0.2:
     resolution:
@@ -2850,6 +2953,19 @@ snapshots:
     dependencies:
       fast-deep-equal: 3.1.3
 
+  "@fastify/mongodb@8.0.0":
+    dependencies:
+      fastify-plugin: 4.5.1
+      mongodb: 6.8.0
+    transitivePeerDependencies:
+      - "@aws-sdk/credential-providers"
+      - "@mongodb-js/zstd"
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - socks
+
   "@fastify/sensible@5.6.0":
     dependencies:
       "@lukeed/ms": 2.0.2
@@ -2875,6 +2991,10 @@ snapshots:
   "@humanwhocodes/retry@0.3.0": {}
 
   "@lukeed/ms@2.0.2": {}
+
+  "@mongodb-js/saslprep@1.1.8":
+    dependencies:
+      sparse-bitfield: 3.0.3
 
   "@nodelib/fs.scandir@2.1.5":
     dependencies:
@@ -2921,6 +3041,12 @@ snapshots:
       "@sentry/types": 7.119.0
 
   "@types/json5@0.0.29": {}
+
+  "@types/webidl-conversions@7.0.3": {}
+
+  "@types/whatwg-url@11.0.5":
+    dependencies:
+      "@types/webidl-conversions": 7.0.3
 
   "@ungap/structured-clone@1.2.0": {}
 
@@ -3067,6 +3193,8 @@ snapshots:
   braces@3.0.3:
     dependencies:
       fill-range: 7.1.1
+
+  bson@6.8.0: {}
 
   buffer@6.0.3:
     dependencies:
@@ -4031,6 +4159,8 @@ snapshots:
 
   media-typer@0.3.0: {}
 
+  memory-pager@1.5.0: {}
+
   mime-db@1.52.0: {}
 
   mime-types@2.1.35:
@@ -4046,6 +4176,17 @@ snapshots:
       brace-expansion: 2.0.1
 
   minimist@1.2.8: {}
+
+  mongodb-connection-string-url@3.0.1:
+    dependencies:
+      "@types/whatwg-url": 11.0.5
+      whatwg-url: 13.0.0
+
+  mongodb@6.8.0:
+    dependencies:
+      "@mongodb-js/saslprep": 1.1.8
+      bson: 6.8.0
+      mongodb-connection-string-url: 3.0.1
 
   ms@2.1.2: {}
 
@@ -4404,6 +4545,10 @@ snapshots:
     dependencies:
       atomic-sleep: 1.0.0
 
+  sparse-bitfield@3.0.3:
+    dependencies:
+      memory-pager: 1.5.0
+
   split2@3.2.2:
     dependencies:
       readable-stream: 3.6.2
@@ -4494,6 +4639,10 @@ snapshots:
 
   toidentifier@1.0.1: {}
 
+  tr46@4.1.1:
+    dependencies:
+      punycode: 2.3.1
+
   tsconfig-paths@3.15.0:
     dependencies:
       "@types/json5": 0.0.29
@@ -4566,6 +4715,13 @@ snapshots:
   walker@1.0.8:
     dependencies:
       makeerror: 1.0.12
+
+  webidl-conversions@7.0.0: {}
+
+  whatwg-url@13.0.0:
+    dependencies:
+      tr46: 4.1.1
+      webidl-conversions: 7.0.0
 
   which-boxed-primitive@1.0.2:
     dependencies:
