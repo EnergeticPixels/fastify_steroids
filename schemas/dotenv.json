@@ -1,7 +1,7 @@
 {
   "type": "object",
   "$id": "schema:dotenv",
-  "required": ["MONGO_URL"],
+  "required": ["DB_HOST"],
   "properties": {
     "NODE_ENV": {
       "type": "string",
@@ -11,7 +11,7 @@
       "type": "integer",
       "default": 3000
     },
-    "MONGO_URL": {
+    "DB_HOST": {
       "type": "string"
     }
   }
