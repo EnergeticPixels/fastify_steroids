@@ -29,6 +29,8 @@
     "@fastify/env": "^4.4.0",
     "@fastify/mongodb": "^8.0.0",
     "@fastify/sensible": "^5.0.0",
+    "@fastify/swagger": "^8.15.0",
+    "@fastify/swagger-ui": "^4.1.0",
     "fastify": "^4.26.1",
     "fastify-cli": "^6.3.0",
     "fastify-plugin": "^4.0.0"

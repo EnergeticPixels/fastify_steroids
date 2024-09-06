@@ -23,8 +23,8 @@ export default async function (fastify, opts) {
     options: { ...opts },
   });
 
-  await fastify.register(import('./configs/config.js'));
-  fastify.log.info('Config loaded %o', fastify.config);
+  // await fastify.register(import('./configs/config.js'));
+  // fastify.log.info('Config loaded %o', fastify.config);
 
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused

@@ -7,7 +7,7 @@
       "type": "string",
       "default": "development"
     },
-    "PORT": {
+    "FASTIFY_PORT": {
       "type": "integer",
       "default": 3000
     },
