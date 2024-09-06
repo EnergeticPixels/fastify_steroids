@@ -36,7 +36,7 @@ export default async function (fastify, opts) {
     indexPattern: /^no$/i,
     // options: {Object.assign({}, opts)},
     // options: fastify.config,
-    options: { ...opts }
+    options: { ...opts },
   });
 
   // This loads all plugins defined in routes
