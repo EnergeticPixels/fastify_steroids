@@ -35,7 +35,8 @@ export default async function (fastify, opts) {
     ignorePattern: /.*.no-aload\.js/,
     indexPattern: /^no$/i,
     // options: {Object.assign({}, opts)},
-    options: fastify.config,
+    // options: fastify.config,
+    options: { ...opts }
   });
 
   // This loads all plugins defined in routes
