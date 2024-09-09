@@ -4,8 +4,6 @@ import path from "node:path";
 import { fileURLToPath } from "url";
 import AutoLoad from "@fastify/autoload";
 
-import serverOptions from "./configs/server-options.js";
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -49,9 +47,10 @@ export default async function (fastify, opts) {
     autoHooksPattern: /.*hooks(\.js|\.cjs)$/i,
     autoHooks: true,
     cascadeHooks: true,
-    // options: {Object.assign({}, opts)},
-    options: { ...opts },
+    options: Object.assign({}, opts),
+    // options: { ...opts },
   });
 }
 
+import serverOptions from "./configs/server-options.js";
 export const options = serverOptions;
