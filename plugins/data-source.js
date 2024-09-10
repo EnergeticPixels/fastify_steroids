@@ -1,8 +1,6 @@
 import fp from "fastify-plugin";
 import fastifyDataSource from "@fastify/mongodb";
 
-
-
 export default fp(
   async function datasourcePlugin(fastify, opts) {
     const dbUrl = `mongodb+srv://${fastify.secrets.DB_USER}:${fastify.secrets.DB_PWORD}@${fastify.secrets.DB_HOST}/${fastify.secrets.DB_NAME}`;

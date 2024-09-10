@@ -1,7 +1,7 @@
 {
   "type": "object",
   "$id": "schema:dotenv",
-  "required": ["FASTIFY_PORT", "DB_HOST", "DB_USER", "DB_PWORD", "DB_NAME"],
+  "required": ["FASTIFY_PORT", "DB_HOST", "DB_USER", "DB_PWORD", "DB_NAME", "JWT_SECRET"],
   "properties": {
     "NODE_ENV": {
       "type": "string",
@@ -29,6 +29,13 @@
     "DB_NAME": {
       "type": "string",
       "default": "mydb"
+    },
+    "JWT_SECRET": {
+      "type": "string"
+    },
+    "JWT_EXPIRE_IN": {
+      "type": "string",
+      "default": "1h"
     }
   }
 }

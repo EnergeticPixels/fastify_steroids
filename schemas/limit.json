@@ -1,12 +1,13 @@
 {
   "$id": "schema:limit",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "limit": {
       "type": "integer",
-      "minimum": 1,
+      "minimum": 0,
       "maximum": 100,
-      "default": 50
+      "default": 0
     }
   }
 }

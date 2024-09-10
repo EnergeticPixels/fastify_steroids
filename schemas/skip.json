@@ -1,6 +1,7 @@
 {
   "$id": "schema:skip",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "skip": {
       "type": "integer",

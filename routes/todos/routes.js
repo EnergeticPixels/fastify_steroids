@@ -1,4 +1,6 @@
 export default async function todoRoutes(fastify, opts) {
+  fastify.addHook("onRequest", fastify.authenticate);
+
   fastify.route({
     method: "GET",
     url: "/",
