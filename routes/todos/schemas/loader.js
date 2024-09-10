@@ -8,6 +8,9 @@ import updateBodySchema from "./update-body.json" assert { type: "json" };
 import readParamsSchema from "./read-params.json" assert { type: "json" };
 import statusParamsSchema from "./status-params.json" assert { type: "json" };
 
+import limitSchema from "./limit.json" assert { type: "json" };
+import skipSchema from "./skip.json" assert { type: "json" };
+
 export default fp(async function schemaLoaderPlugin(fastify, opts) {
   fastify.addSchema(todoSchema);
   fastify.addSchema(listResponseSchema);
@@ -17,4 +20,7 @@ export default fp(async function schemaLoaderPlugin(fastify, opts) {
   fastify.addSchema(updateBodySchema);
   fastify.addSchema(readParamsSchema);
   fastify.addSchema(statusParamsSchema);
+
+  fastify.addSchema(limitSchema);
+  fastify.addSchema(skipSchema);
 });
