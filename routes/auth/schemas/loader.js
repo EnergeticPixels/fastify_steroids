@@ -1,9 +1,9 @@
 import fp from "fastify-plugin";
-
-import registerSchema from "./register.json" assert { type: "json" };
-import tokenHeaderSchema from "./token-header.json" assert { type: "json" };
-import tokenSchema from "./token.json" assert { type: "json" };
-import userSchema from "./user.json" assert { type: "json" };
+/* eslint-disable no-undef */
+import registerSchema from "./register.json" with { type: "json" };
+import tokenHeaderSchema from "./token-header.json" with { type: "json" };
+import tokenSchema from "./token.json" with { type: "json" };
+import userSchema from "./user.json" with { type: "json" };
 
 export default fp(async function schemaLoaderPlugin(fastify, opts) {
   fastify.addSchema(registerSchema);

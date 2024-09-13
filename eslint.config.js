@@ -8,11 +8,11 @@ export default [
       ecmaVersion: 2022,
       sourceType: "module",
     },
+    rules: {
+      // "no-console": "off",
+      "no-undef": "off",
+      "no-unused-vars": "off",
+    }
   },
-  pluginJs.configs.recommended,
-  // "rules": {
-  //   "no-console": "off",
-  //   "no-undef": "off",
-  //   "no-unused-vars": "off"
-  // }
+  pluginJs.configs.recommended
 ];
