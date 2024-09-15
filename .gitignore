@@ -63,3 +63,6 @@ profile*
 # Environment variables
 .env
 !.env.sample
+
+# TESTING
+.tap

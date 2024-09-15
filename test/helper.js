@@ -1,35 +1,40 @@
-"use strict";
 
 // This file contains code that we reuse
 // between our tests.
+import * as fcli from 'fastify-cli/helper.js';
+// import  from '../plugins/data-source.js';
+// import fastify from 'fastify';
 
-const { build: buildApplication } = require("fastify-cli/helper");
-const path = require("node:path");
-const AppPath = path.join(__dirname, "..", "app.js");
+const startArgs = '-l silent --options app.js'
+
+const defaultEnv = {
+  NODE_ENV: 'test',
+  DB_HOST: process.env.DB_HOST,
+  DB_PORT: process.env.DB_PORT,
+  DB_NAME: process.env.DB_NAME,
+  DB_USER: process.env.DB_USER,
+  DB_PASSWORD: process.env.DB_PASSWORD,
+  JWT_SECRET: 'secret-1234567890'
+}
 
 // Fill in this config with all the configurations
 // needed for testing the application
-function config() {
-  return {};
+function config (env) {
+  return {
+    configData: env
+  }
 }
 
 // automatically build and tear down our instance
-async function build(t) {
-  // you can set all the options supported by the fastify CLI command
-  const argv = [AppPath];
-
-  // fastify-plugin ensures that all decorators
-  // are exposed for testing purposes, this is
-  // different from the production setup
-  const app = await buildApplication(argv, config());
-
-  // close the app after we are done
-  t.after(() => app.close());
-
-  return app;
+async function buildApp (t, env, serverOptions) {
+  const app = await fcli.build(startArgs,
+    config({ ...defaultEnv, ...env }),
+    serverOptions
+  )
+  t.teardown(() => { app.close() })
+  return app
 }
 
-module.exports = {
-  config,
-  build,
-};
+export {
+  buildApp
+}

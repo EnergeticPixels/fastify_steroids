@@ -12,7 +12,7 @@ export default [
       // "no-console": "off",
       "no-undef": "off",
       "no-unused-vars": "off",
-    }
+    },
   },
-  pluginJs.configs.recommended
+  pluginJs.configs.recommended,
 ];

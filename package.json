@@ -8,14 +8,16 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node --test test/**/*.test.js",
     "start": "fastify start -l info --options app.js",
     "dev": "pnpm start -- --watch --pretty-logs --debug",
     "lint": "eslint --color --cache",
     "lint:fix": "eslint --fix",
     "checkformat": "prettier --check .",
     "fixformat": "prettier --write .",
-    "devsec": "snyk test"
+    "devsec": "snyk test",
+    "test": "tap test/**/*.test.js -- --no-check-coverage",
+    "test:nostop": "tap test/**/*.test.js -- --no-check-coverage",
+    "test:coverage": "tap --coverage-report=html test/**/*.test.js "
   },
   "engines": {
     "node": "^20",
@@ -44,9 +46,11 @@
     "@eslint/js": "^9.10.0",
     "eslint": "^9.10.0",
     "eslint-config-semistandard": "^17.0.0",
+    "fs": "0.0.1-security",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "semistandard": "^17.0.0",
-    "snyk": "^1.1293.0"
+    "snyk": "^1.1293.0",
+    "tap": "^21.0.1"
   }
 }
