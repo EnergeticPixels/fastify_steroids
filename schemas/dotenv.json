@@ -1,7 +1,7 @@
 {
   "type": "object",
   "$id": "schema:dotenv",
-  "required": ["FASTIFY_PORT", "DB_HOST", "DB_USER", "DB_PWORD", "DB_NAME", "JWT_SECRET"],
+  "required": ["FASTIFY_PORT", "DB_HOST", "DB_USER", "DB_PWORD", "DB_NAME", "JWT_SECRET", "LOG_LEVEL"],
   "properties": {
     "NODE_ENV": {
       "type": "string",
@@ -36,6 +36,10 @@
     "JWT_EXPIRE_IN": {
       "type": "string",
       "default": "1h"
+    },
+    "LOG_LEVEL": {
+      "type": "string",
+      "default": "info"
     }
   }
 }

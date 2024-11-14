@@ -11,4 +11,10 @@ export default fp(async function errorHandlerPlugin(fastify, opts) {
     req.log.info({ req, res: reply, err }, err?.message);
     reply.send(err);
   });
+  fastify.addHook('onRequest', async (req) => {
+    req.log.info({ req }, 'incoming request')
+  })
+  fastify.addHook('onResponse', async (req, res) => {
+    req.log.info({ req, res }, 'request completed')
+  })
 });
