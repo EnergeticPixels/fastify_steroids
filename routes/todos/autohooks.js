@@ -11,7 +11,7 @@ export default fp(
 
     fastify.register(schemas);
 
-    fastify.decorateRequest("todoDataSource", null);
+    fastify.decorateRequest("todosDataSource", null);
     fastify.addHook("onRequest", async (request, reply) => {
       // [2]
       request.todosDataSource = {

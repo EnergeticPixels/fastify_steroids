@@ -13,7 +13,7 @@ export default async function fileTodoRoutes(fastify, _opts) {
           skip_empty_lines: true,
           trim: true,
           columns: true,
-        }),
+        })
       );
 
       for await (const line of stream) {
@@ -98,7 +98,7 @@ export default async function fileTodoRoutes(fastify, _opts) {
           header: true,
           columns: ["title", "done", "createdAt", "modifiedAt", "id"],
           cast: {
-            boolean: (value) => (value ? "true" : "false"),
+            boolean: (value) => value ? "true" : "false",
             date: (value) => value.toISOString(),
           },
         }),
